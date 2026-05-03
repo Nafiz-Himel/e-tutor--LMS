@@ -251,18 +251,12 @@
 
   .logo {
     min-width: auto;
-    order: 1;
-  }
-
-  .browse-box {
-    order: 2;
   }
 
   .search-box {
     flex: none;
-    max-width: 250px;
+    max-width: 320px;
     padding: 6px 10px;
-    order: 3;
   }
 
   .search-box input {
@@ -270,7 +264,6 @@
   }
 
   .icons {
-    order: 4;
     gap: 12px;
     padding: 0;
   }
@@ -283,10 +276,6 @@
     width: 14px;
     height: 14px;
     font-size: 9px;
-  }
-
-  .btn {
-    order: 5;
   }
 
   .btn-create {
@@ -316,18 +305,73 @@
 @media (max-width: 768px) {
   .logo-sec {
     flex-wrap: wrap;
-    flex-direction: row;
+    padding: 8px 12px;
+    gap: 8px 12px;
     align-items: center;
-    padding: 10px 12px;
-    gap: 10px;
   }
 
+  /* Row 1: Logo | Icons | Buttons */
   .logo {
-    justify-content: flex-start;
+    order: 1;
+    min-width: auto;
   }
 
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .icons {
+    order: 2;
+    gap: 16px;
+    padding: 0;
+    margin-left: auto;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .badge {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .btn {
+    order: 3;
+  }
+
+  .btn-create {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .btn-signin {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* Row 2: Browse | Search */
   .browse-box {
-    align-self: auto;
+    order: 4;
+    padding: 8px 12px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    order: 5;
+    flex: 1;
+    min-width: 0;
+    padding: 8px 12px;
+  }
+
+  .search-box input {
+    font-size: 13px;
   }
 
   .dropdown-menu {
@@ -348,57 +392,83 @@
 
   .dropdown-grid {
     gap: 16px;
-  }
-
-  .search-box {
-    order: 3;
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .icons {
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .btn {
-    display: flex;
-    justify-content: center;
-    order: 5;
-    width: 100%;
-  }
-
-  .btn-lists {
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  .logo-sec {
+    padding: 6px 10px;
+    gap: 6px 8px;
+  }
+
+  /* Row 1: Logo | Icons | Buttons */
+  .logo {
+    min-width: auto;
+  }
+
   .logo h1 {
+    font-size: 17px;
+  }
+
+  .logo-icon {
     font-size: 18px;
   }
 
+  .icons {
+    gap: 14px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .badge {
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+  }
+
+  .btn-lists {
+    gap: 6px;
+  }
+
+  .btn-create {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .btn-signin {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  /* Row 2: Browse | Search */
   .browse-box {
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 6px 8px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .search-box {
+    padding: 6px 8px;
+  }
+
+  .search-box input {
+    font-size: 12px;
   }
 
   .dropdown-menu {
     width: 95vw;
-    padding: 16px;
+    max-width: 320px;
+    padding: 14px;
   }
 
-  .icons {
-    gap: 18px;
+  .dropdown-category-title {
+    font-size: 12px;
   }
 
-  .btn-create {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-
-  .btn-signin {
-    padding: 6px 14px;
+  .dropdown-course-list li a {
     font-size: 13px;
   }
 }

@@ -125,17 +125,18 @@
 
 @media (max-width: 600px) {
   .category-section {
-    width: 95%;
-    padding: 20px 0;
+    width: 100%;
+    padding: 16px 0;
   }
 
   .grid-section {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px;
+    padding: 0 12px;
   }
 
   .label {
-    padding: 12px;
+    padding: 12px 14px;
   }
 
   .label-icon {
@@ -150,5 +151,17 @@
 
   .label-para p {
     font-size: 12px;
+  }
+
+  .heading-para-category {
+    font-size: 18px;
+    padding: 0 12px;
+  }
+
+  .text {
+    padding: 0 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }

@@ -92,36 +92,46 @@
     .navbar {
         flex-direction: column;
         height: auto;
-        padding: 10px 0;
+        padding: 8px 0;
     }
 
     .nav-left-list {
         flex-wrap: wrap;
         justify-content: center;
         margin-left: 0;
-        gap: 8px 16px;
-        padding: 0 12px;
-    }
-
-    .nav-right-list {
-        margin-right: 0;
-        margin-top: 8px;
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-left-list {
         gap: 6px 12px;
+        padding: 0 10px;
     }
 
     .nav-left-list li a {
         font-size: 12px;
+        padding: 4px 2px;
+    }
+
+    .nav-right-list {
+        margin-right: 0;
+        margin-top: 6px;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 6px 0;
+    }
+
+    .nav-left-list {
+        gap: 4px 10px;
+        padding: 0 8px;
+    }
+
+    .nav-left-list li a {
+        font-size: 11px;
     }
 
     .lang-switch {
         padding: 3px 8px;
-        font-size: 12px;
+        font-size: 11px;
     }
 }
 

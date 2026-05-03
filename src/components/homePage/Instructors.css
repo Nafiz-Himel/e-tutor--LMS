@@ -103,20 +103,47 @@
 
 @media (max-width: 480px) {
   .instructors-section {
-    width: 95%;
-    margin: 30px auto;
+    width: 100%;
+    margin: 20px auto;
   }
 
   .section-header {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    padding: 0 12px;
+  }
+
+  .section-header h2 {
+    font-size: 18px;
+  }
+
+  .section-header p {
+    font-size: 13px;
+  }
+
+  .instructors-grid {
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .instructor-card {
+    padding: 16px;
   }
 
   .instructor-avatar {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
 
   .instructor-name {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .instructor-title {
+    font-size: 12px;
+  }
+
+  .instructor-stats {
+    gap: 12px;
+    font-size: 13px;
   }
 }
