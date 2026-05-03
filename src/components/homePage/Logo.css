@@ -240,3 +240,165 @@
 .btn-signin:hover{
   background-color: #e85520;
 }
+
+@media (max-width: 1024px) {
+  .logo-sec {
+    flex-wrap: nowrap;
+    padding: 10px 16px;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    min-width: auto;
+    order: 1;
+  }
+
+  .browse-box {
+    order: 2;
+  }
+
+  .search-box {
+    flex: none;
+    max-width: 250px;
+    padding: 6px 10px;
+    order: 3;
+  }
+
+  .search-box input {
+    font-size: 13px;
+  }
+
+  .icons {
+    order: 4;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .badge {
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+  }
+
+  .btn {
+    order: 5;
+  }
+
+  .btn-create {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .btn-signin {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .browse-box {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .dropdown-menu {
+    width: 400px;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-sec {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+
+  .browse-box {
+    align-self: auto;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 400px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 8px;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown-grid {
+    gap: 16px;
+  }
+
+  .search-box {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .icons {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    order: 5;
+    width: 100%;
+  }
+
+  .btn-lists {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .browse-box {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .dropdown-menu {
+    width: 95vw;
+    padding: 16px;
+  }
+
+  .icons {
+    gap: 18px;
+  }
+
+  .btn-create {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .btn-signin {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}

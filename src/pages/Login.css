@@ -106,3 +106,50 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 30px;
+  }
+
+  .auth-header h1 {
+    font-size: 24px;
+  }
+
+  .auth-logo {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 20px 12px;
+  }
+
+  .auth-container {
+    padding: 24px 20px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .auth-header h1 {
+    font-size: 20px;
+  }
+
+  .auth-header p {
+    font-size: 13px;
+  }
+
+  .auth-form {
+    gap: 16px;
+  }
+
+  .auth-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .auth-switch {
+    font-size: 13px;
+  }
+}

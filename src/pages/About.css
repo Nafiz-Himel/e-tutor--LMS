@@ -68,7 +68,79 @@
 }
 
 @media (max-width: 768px) {
+  .about-page {
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
+  .about-hero {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+  }
+
+  .about-content {
+    gap: 40px;
+  }
+
+  .mission-section h2,
+  .team-section h2 {
+    font-size: 24px;
+  }
+
+  .mission-section p,
+  .team-section p {
+    font-size: 14px;
+  }
+
   .stats-section {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  .stat-card h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 30px 16px;
+    margin-bottom: 30px;
+  }
+
+  .about-hero h1 {
+    font-size: 24px;
+  }
+
+  .about-hero p {
+    font-size: 14px;
+  }
+
+  .about-content {
+    gap: 30px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-card h3 {
+    font-size: 24px;
   }
 }

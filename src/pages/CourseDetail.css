@@ -203,8 +203,95 @@
 }
 
 @media (max-width: 768px) {
+  .course-detail-page {
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
   .course-hero,
   .course-body {
     grid-template-columns: 1fr;
+  }
+
+  .course-hero {
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+
+  .course-hero-content h1 {
+    font-size: 24px;
+  }
+
+  .course-description {
+    font-size: 14px;
+  }
+
+  .course-meta {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .course-price-large {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .course-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-enroll,
+  .btn-wishlist {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .course-body {
+    gap: 30px;
+  }
+
+  .curriculum-section h2,
+  .instructor-section h2 {
+    font-size: 20px;
+  }
+
+  .instructor-card-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .instructor-card-detail img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .instructor-card-detail h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-hero-content h1 {
+    font-size: 20px;
+  }
+
+  .course-price-large {
+    font-size: 20px;
+  }
+
+  .curriculum-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .lesson-number {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
   }
 }

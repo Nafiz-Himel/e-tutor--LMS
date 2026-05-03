@@ -70,3 +70,53 @@
   color: #ff6636;
   font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .instructors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .instructors-section {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .instructors-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .instructor-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructors-section {
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .section-header {
+    margin-bottom: 24px;
+  }
+
+  .instructor-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .instructor-name {
+    font-size: 16px;
+  }
+}

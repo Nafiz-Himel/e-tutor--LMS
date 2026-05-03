@@ -8,3 +8,28 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+
+@media (max-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .popular-courses-section {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popular-courses-section {
+    width: 95%;
+    margin: 30px auto;
+  }
+}

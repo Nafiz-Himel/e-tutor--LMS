@@ -43,3 +43,34 @@
 .home-link:hover {
   background: #e55520;
 }
+
+@media (max-width: 768px) {
+  .notfound-content h1 {
+    font-size: 80px;
+  }
+
+  .notfound-content h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-content h1 {
+    font-size: 60px;
+  }
+
+  .notfound-content h2 {
+    font-size: 20px;
+  }
+
+  .notfound-content p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .home-link {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+  }
+}

@@ -118,7 +118,48 @@
 }
 
 @media (max-width: 768px) {
+  .contact-page {
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
+  .contact-header {
+    margin-bottom: 30px;
+  }
+
+  .contact-header h1 {
+    font-size: 24px;
+  }
+
+  .contact-header p {
+    font-size: 14px;
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-form-section {
+    padding: 20px;
+  }
+
+  .info-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h1 {
+    font-size: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 14px;
   }
 }

@@ -32,5 +32,66 @@
 
 .pic-part img {
   width: 100%;
-  height: 90%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .para-part {
+    padding: 10% 5% 10px 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSectionOne {
+    grid-template-columns: 1fr;
+  }
+
+  .para-part {
+    padding: 30px 20px;
+    order: 2;
+    align-items: center;
+    text-align: center;
+  }
+
+  .long-para {
+    width: 100%;
+  }
+
+  .pic-part {
+    order: 1;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .pic-part img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .para-part {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .heading h1 {
+    font-size: 20px;
+    letter-spacing: 0.1rem;
+  }
+
+  .long-para p {
+    font-size: 14px;
+  }
+
+  .btn-create-hero {
+    padding: 12px 24px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .pic-part {
+    max-height: 200px;
+  }
 }

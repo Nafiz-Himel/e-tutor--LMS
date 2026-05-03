@@ -74,3 +74,42 @@
   font-size: 14px;
   color: #b4b7c9;
 }
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer {
+    padding: 30px 0 0;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  .footer-logo h3 {
+    font-size: 18px;
+  }
+
+  .footer-section h4 {
+    font-size: 14px;
+  }
+
+  .footer-desc,
+  .footer-section ul li a,
+  .contact-info li {
+    font-size: 13px;
+  }
+}

@@ -150,3 +150,36 @@
 .modal-switch a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px;
+    max-width: 95%;
+    border-radius: 8px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .modal-header p {
+    font-size: 13px;
+  }
+
+  .modal-logo {
+    font-size: 28px;
+  }
+
+  .modal-form {
+    gap: 12px;
+  }
+
+  .modal-submit {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .modal-switch {
+    font-size: 13px;
+  }
+}

@@ -55,3 +55,48 @@
 .newsletter-form button:hover {
   background: #2d3139;
 }
+
+@media (max-width: 768px) {
+  .newsletter-section {
+    padding: 40px 0;
+    margin-top: 40px;
+  }
+
+  .newsletter-content {
+    width: 90%;
+  }
+
+  .newsletter-content h2 {
+    font-size: 24px;
+  }
+
+  .newsletter-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-section {
+    padding: 30px 0;
+    margin-top: 30px;
+  }
+
+  .newsletter-content {
+    width: 95%;
+  }
+
+  .newsletter-content h2 {
+    font-size: 20px;
+  }
+}
