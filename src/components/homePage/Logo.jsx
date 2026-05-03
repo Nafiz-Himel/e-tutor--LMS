@@ -15,6 +15,7 @@ import courses from "../../data/courses";
 
 const Logo = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenNotif, setIsOpenNotif] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const { user, logout } = useAuth();
   const { wishlist, cartItems } = useCart();
@@ -49,6 +50,12 @@ const Logo = () => {
     return acc;
   }, {});
 
+  const notifications = [
+    { id: 1, text: "New course available: React Masterclass", time: "2h ago" },
+    { id: 2, text: "Your wishlist item is on sale", time: "5h ago" },
+    { id: 3, text: "Welcome to E-tutor!", time: "1d ago" },
+  ];
+
   return (
     <div className="logo-sec">
       <Link to="/" className="logo">
@@ -61,8 +68,16 @@ const Logo = () => {
         <span className="arrow">
           <FontAwesomeIcon icon={faChevronDown} />
         </span>
-        {isOpen && (
-          <div className="dropdown-menu">
+      </div>
+
+      {isOpen && (
+        <>
+          <div className="dropdown-overlay" onClick={() => setIsOpen(false)} />
+          <div className="dropdown-menu browse-modal">
+            <div className="browse-modal-header">
+              <h3>Browse Courses</h3>
+              <button className="browse-close" onClick={() => setIsOpen(false)}>✕</button>
+            </div>
             <div className="dropdown-grid">
               {Object.entries(coursesByCategory).map(([category, categoryCourses]) => (
                 <div key={category} className="dropdown-category">
@@ -80,8 +95,8 @@ const Logo = () => {
               ))}
             </div>
           </div>
-        )}
-      </div>
+        </>
+      )}
 
       <div className="search-box">
         <span className="search-icon" onClick={handleSearch}>
@@ -91,9 +106,23 @@ const Logo = () => {
       </div>
 
       <div className="icons">
-        <span className="icon" title="Notifications">
+        <div className="icon notif-icon" onClick={() => setIsOpenNotif(!isOpenNotif)} title="Notifications">
           <FontAwesomeIcon icon={faBell} />
-        </span>
+          <span className="badge">{notifications.length}</span>
+          {isOpenNotif && (
+            <div className="dropdown-menu notif-dropdown">
+              <h4 className="dropdown-category-title">Notifications</h4>
+              <ul className="dropdown-course-list notif-list">
+                {notifications.map((n) => (
+                  <li key={n.id}>
+                    <span className="notif-text">{n.text}</span>
+                    <span className="notif-time">{n.time}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
         <Link to="/dashboard" className="icon" title="Wishlist">
           <FontAwesomeIcon icon={faHeart} />
           {wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
