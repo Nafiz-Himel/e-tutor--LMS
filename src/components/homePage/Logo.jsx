@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { useCart } from "../../hooks/useCart";
+import courses from "../../data/courses";
 
 const Logo = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,14 @@ const Logo = () => {
     }
   };
 
+  const coursesByCategory = courses.reduce((acc, course) => {
+    if (!acc[course.category]) {
+      acc[course.category] = [];
+    }
+    acc[course.category].push(course);
+    return acc;
+  }, {});
+
   return (
     <div className="logo-sec">
       <Link to="/" className="logo">
@@ -40,10 +49,22 @@ const Logo = () => {
         </span>
         {isOpen && (
           <div className="dropdown-menu">
-            <li><Link to="/courses">Web Development</Link></li>
-            <li><Link to="/courses">App Development</Link></li>
-            <li><Link to="/courses">Data Science</Link></li>
-            <li><Link to="/courses">UI/UX Design</Link></li>
+            <div className="dropdown-grid">
+              {Object.entries(coursesByCategory).map(([category, categoryCourses]) => (
+                <div key={category} className="dropdown-category">
+                  <h4 className="dropdown-category-title">{category}</h4>
+                  <ul className="dropdown-course-list">
+                    {categoryCourses.map((course) => (
+                      <li key={course.id}>
+                        <Link to={`/courses/${course.id}`} onClick={() => setIsOpen(false)}>
+                          {course.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

@@ -48,30 +48,80 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  right: -25%;
+  top: calc(100% + 8px);
+  left: 0;
   background: white;
   border: 1px solid #e9eaf0;
-  list-style: none;
-  width: 150px;
-  z-index: 999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 5px 0;
+  border-radius: 12px;
+  width: 600px;
+  z-index: 1001;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 20px;
 }
 
-.dropdown-menu li {
-  margin: 5px;
-  margin-left: 10px;
-  padding: 2px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.122);
-  border-left: 1px solid 50% rgba(0, 0, 0, 0.122);
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-left: 1px solid #e9eaf0;
+  border-top: 1px solid #e9eaf0;
 }
-.dropdown-menu li a {
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.dropdown-category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-category-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ff6636;
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #f0f1f5;
+}
+
+.dropdown-course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-course-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f5f6fa;
+}
+
+.dropdown-course-list li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-course-list li a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.68);
+  color: #4a4c54;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: inline-block;
+  line-height: 1.4;
 }
-.dropdown-menu li a:hover {
-  color: rgb(0, 0, 0);
+
+.dropdown-course-list li a:hover {
+  color: #ff6636;
+  transform: translateX(4px);
 }
 /* Search bar */
 .search-box {

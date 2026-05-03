@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./HeroSectionOne.css"
 import HeroImg from "../../assets/HeroSectionOne.png";
+import SignupModal from "../SignupModal/SignupModal";
 
 const HeroSectionOne = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className='heroSectionOne'>
         <div className="para-part">
@@ -13,13 +16,14 @@ const HeroSectionOne = () => {
             <p>Our mision is to help people to find the best course online and learn with expert antime, anywhere.</p>
           </div>
           <div className="btn-hero">
-            <button className='btn-create-hero'>Create Account</button>
+            <button className='btn-create-hero' onClick={() => setShowModal(true)}>Create Account</button>
           </div>
         </div>
         <div className="pic-part">
             <img src={HeroImg} alt="hero-pic" />
         </div>
       
+        <SignupModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   )
 }
