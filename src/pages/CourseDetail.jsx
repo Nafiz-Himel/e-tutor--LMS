@@ -4,15 +4,20 @@ import { faStar, faCartShopping, faHeart } from "@fortawesome/free-solid-svg-ico
 import "./CourseDetail.css";
 import courses from "../data/courses";
 import instructors from "../data/instructors";
+import { useCart } from "../hooks/useCart";
 
 const CourseDetail = () => {
   const { id } = useParams();
   const course = courses.find((c) => c.id === parseInt(id));
   const instructor = instructors.find((i) => i.name === course?.instructor);
+  const { wishlist, toggleWishlist, cartItems, addToCart } = useCart();
 
   if (!course) {
     return <div className="course-not-found">Course not found</div>;
   }
+
+  const isInWishlist = wishlist.includes(course.id);
+  const isInCart = cartItems.some((item) => item.id === course.id);
 
   return (
     <div className="course-detail-page">
@@ -27,8 +32,12 @@ const CourseDetail = () => {
           </div>
           <div className="course-price-large">${course.price}</div>
           <div className="course-actions">
-            <button className="btn-enroll"><FontAwesomeIcon icon={faCartShopping} /> Enroll Now</button>
-            <button className="btn-wishlist"><FontAwesomeIcon icon={faHeart} /> Add to Wishlist</button>
+            <button className={`btn-enroll ${isInCart ? "active" : ""}`} onClick={() => !isInCart && addToCart(course)}>
+              <FontAwesomeIcon icon={faCartShopping} /> {isInCart ? "In Cart" : "Enroll Now"}
+            </button>
+            <button className={`btn-wishlist ${isInWishlist ? "active" : ""}`} onClick={() => toggleWishlist(course.id)}>
+              <FontAwesomeIcon icon={faHeart} /> {isInWishlist ? "In Wishlist" : "Add to Wishlist"}
+            </button>
           </div>
         </div>
         <div className="course-thumbnail-large">

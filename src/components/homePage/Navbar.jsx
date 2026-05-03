@@ -7,7 +7,7 @@ const navLinks = [
   { name: "Courses", path: "/courses" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
-  { name: "Become an Instructor", path: "#" },
+  { name: "Become an Instructor", path: "/become-instructor" },
 ]
 const navRight = ["USE", "ENG"]
 

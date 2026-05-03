@@ -62,7 +62,7 @@
 .dropdown-menu::before {
   content: "";
   position: absolute;
-  top: -8px;
+  top: -3px;
   left: 24px;
   transform: rotate(45deg);
   width: 14px;

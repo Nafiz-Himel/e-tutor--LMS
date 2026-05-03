@@ -1,0 +1,160 @@
+.instructor-auth-page {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f5f7fa;
+}
+
+.instructor-auth-page .auth-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 700px;
+}
+
+.instructor-success {
+  text-align: center;
+}
+
+.instructor-success .auth-logo {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.instructor-success h1 {
+  font-size: 28px;
+  color: #1d2026;
+  margin-bottom: 12px;
+}
+
+.instructor-success p {
+  color: #666;
+  font-size: 16px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-logo {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.auth-header h1 {
+  font-size: 26px;
+  color: #1d2026;
+  margin: 0 0 8px;
+}
+
+.auth-header p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.auth-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-form .form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.auth-form .form-group input,
+.auth-form .form-group textarea {
+  padding: 10px 14px;
+  border: 1px solid #e2e5ee;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.auth-form .form-group input:focus,
+.auth-form .form-group textarea:focus {
+  border-color: #ff6636;
+  box-shadow: 0 0 0 3px rgba(255, 102, 54, 0.1);
+}
+
+.auth-error {
+  background: #fff2f2;
+  color: #e53e3e;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #fecaca;
+}
+
+.auth-btn {
+  padding: 12px;
+  background: #ff6636;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-btn:hover {
+  background: #e85520;
+}
+
+.instructor-btn {
+  padding: 14px;
+  font-size: 16px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-switch a {
+  color: #ff6636;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .auth-container {
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

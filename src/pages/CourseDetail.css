@@ -72,10 +72,20 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s;
 }
 
 .btn-enroll:hover {
   background: #e55520;
+}
+
+.btn-enroll.active {
+  background: #22c55e;
+  cursor: default;
+}
+
+.btn-enroll.active:hover {
+  background: #22c55e;
 }
 
 .btn-wishlist {
@@ -90,10 +100,25 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-wishlist:not(.active) .fa-heart {
+  color: #ff6636;
 }
 
 .btn-wishlist:hover {
   background: #ffe8df;
+}
+
+.btn-wishlist.active {
+  background: #ff6636;
+  color: #fff;
+  border-color: #ff6636;
+}
+
+.btn-wishlist.active:hover {
+  background: #e55520;
 }
 
 .course-thumbnail-large img {
