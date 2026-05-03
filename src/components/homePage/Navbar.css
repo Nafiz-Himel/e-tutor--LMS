@@ -121,12 +121,15 @@
     }
 
     .nav-left-list {
-        gap: 4px 10px;
-        padding: 0 8px;
+        gap: 2px 8px;
+        padding: 0 4px;
+        max-width: 100%;
+        margin-left: 0;
     }
 
     .nav-left-list li a {
-        font-size: 11px;
+        font-size: 9px;
+        padding: 2px 1px;
     }
 
     .lang-switch {
