@@ -169,49 +169,91 @@
 
 @media (max-width: 480px) {
   .instructor-auth-page {
-    padding: 16px 12px;
+    padding: 12px 10px;
+    min-height: auto;
   }
 
   .instructor-auth-page .auth-container {
-    padding: 20px;
-    max-width: 100%;
-    border-radius: 8px;
+    padding: 20px 16px;
+    max-width: 95%;
+    border-radius: 6px;
+    margin: 12px auto;
+  }
+
+  .auth-header {
+    margin-bottom: 20px;
   }
 
   .auth-header h1 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 4px;
   }
 
   .auth-header p {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .auth-logo {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 8px;
   }
 
   .instructor-success .auth-logo {
-    font-size: 36px;
+    font-size: 32px;
+    margin-bottom: 12px;
   }
 
   .instructor-success h1 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   .instructor-success p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .auth-form {
-    gap: 14px;
+    gap: 8px;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .auth-form .form-group {
+    gap: 4px;
+  }
+
+  .auth-form .form-group label {
+    font-size: 11px;
+  }
+
+  .auth-form .form-group input,
+  .auth-form .form-group textarea {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .auth-error {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .auth-btn {
+    padding: 9px;
+    font-size: 12px;
   }
 
   .instructor-btn {
-    padding: 12px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 12px;
   }
 
   .auth-switch {
-    font-size: 13px;
+    font-size: 11px;
+    margin-top: 12px;
   }
 }

@@ -153,33 +153,71 @@
 
 @media (max-width: 480px) {
   .modal-content {
-    padding: 20px;
-    max-width: 95%;
+    padding: 12px;
+    max-width: 80%;
     border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-close {
+    font-size: 14px;
+    padding: 4px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .modal-header {
+    margin-bottom: 12px;
   }
 
   .modal-header h2 {
-    font-size: 18px;
+    font-size: 15px;
+    margin-bottom: 4px;
   }
 
   .modal-header p {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .modal-logo {
-    font-size: 28px;
+    font-size: 22px;
+    margin-bottom: 4px;
   }
 
   .modal-form {
-    gap: 12px;
+    gap: 6px;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .modal-form .form-group {
+    gap: 3px;
+  }
+
+  .modal-form .form-group label {
+    font-size: 10px;
+  }
+
+  .modal-form .form-group input {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .modal-error {
+    padding: 6px 10px;
+    font-size: 11px;
+    margin-bottom: 4px;
   }
 
   .modal-submit {
-    padding: 10px;
-    font-size: 14px;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 2px;
   }
 
   .modal-switch {
-    font-size: 13px;
+    font-size: 11px;
+    margin-top: 8px;
   }
 }

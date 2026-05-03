@@ -311,9 +311,75 @@
   }
 
   /* Row 1: Logo | Icons | Buttons */
+  /* Row 1: Logo | Icons | Buttons */
   .logo {
     order: 1;
     min-width: auto;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .icons {
+    order: 2;
+    gap: 12px;
+    padding: 0;
+    margin-left: auto;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .badge {
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+  }
+
+  .btn {
+    order: 3;
+  }
+
+  .btn-lists {
+    gap: 6px;
+  }
+
+  .btn-create {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .btn-signin {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  /* Row 2: Browse */
+  .browse-box {
+    order: 4;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .search-box {
+    order: 5;
+    flex: 1;
+    min-width: 0;
+    margin-top: 8px;
+    padding: 5px 10px;
   }
 
   .logo h1 {
@@ -346,8 +412,7 @@
   }
 
   .btn-create {
-    padding: 8px 12px;
-    font-size: 13px;
+    display: none;
   }
 
   .btn-signin {
@@ -358,6 +423,9 @@
   /* Row 2: Browse | Search */
   .browse-box {
     order: 4;
+    flex-basis: 100%;
+    width: auto;
+    margin-top: 8px;
     padding: 8px 12px;
     font-size: 13px;
     flex-shrink: 0;
@@ -375,13 +443,12 @@
   }
 
   .dropdown-menu {
-    position: fixed;
-    top: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90vw;
-    max-width: 400px;
-    max-height: 70vh;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    transform: none;
+    width: 250px;
+    max-height: 60vh;
     overflow-y: auto;
     border-radius: 8px;
   }
@@ -404,6 +471,7 @@
 
   /* Row 1: Logo | Icons | Buttons */
   .logo {
+    order: 1;
     min-width: auto;
   }
 
@@ -416,42 +484,51 @@
   }
 
   .icons {
-    gap: 14px;
+    order: 2;
+    gap: 8px;
+    margin-left: auto;
   }
 
   .icon {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .badge {
-    width: 14px;
-    height: 14px;
-    font-size: 9px;
+    width: 10px;
+    height: 10px;
+    font-size: 7px;
+  }
+
+  .btn {
+    order: 3;
   }
 
   .btn-lists {
-    gap: 6px;
+    gap: 3px;
   }
 
   .btn-create {
-    padding: 7px 10px;
-    font-size: 12px;
+    display: none;
   }
 
   .btn-signin {
-    padding: 7px 12px;
-    font-size: 12px;
+    padding: 4px 8px;
+    font-size: 10px;
   }
 
-  /* Row 2: Browse | Search */
+  /* Row 2: Browse */
   .browse-box {
-    padding: 6px 8px;
-    font-size: 12px;
-    gap: 4px;
+    order: 4;
+    width: fit-content;
+    margin-top: 6px;
+    padding: 4px 6px;
+    font-size: 11px;
+    gap: 3px;
+    flex-shrink: 0;
   }
 
   .search-box {
-    padding: 6px 8px;
+    display: none;
   }
 
   .search-box input {
@@ -459,16 +536,49 @@
   }
 
   .dropdown-menu {
-    width: 95vw;
-    max-width: 320px;
-    padding: 14px;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 250px;
+    max-height: 60vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .dropdown-menu::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-left: 1px solid #e9eaf0;
+    border-top: 1px solid #e9eaf0;
   }
 
   .dropdown-category-title {
-    font-size: 12px;
+    font-size: 11px;
+    padding-bottom: 4px;
+  }
+
+  .dropdown-course-list li {
+    padding: 4px 0;
   }
 
   .dropdown-course-list li a {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .dropdown-grid {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown-category {
+    max-width: 200px;
   }
 }

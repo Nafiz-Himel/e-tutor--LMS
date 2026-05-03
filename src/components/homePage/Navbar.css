@@ -130,8 +130,7 @@
     }
 
     .lang-switch {
-        padding: 3px 8px;
-        font-size: 11px;
+        display: none;
     }
 }
 

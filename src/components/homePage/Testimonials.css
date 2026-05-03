@@ -75,12 +75,49 @@
 
 @media (max-width: 480px) {
   .testimonials-section {
-    width: 95%;
-    padding: 30px 0;
-    margin: 30px auto;
+    width: 100%;
+    padding: 20px 0;
+    margin: 20px auto;
+  }
+
+  .testimonials-grid {
+    gap: 12px;
+    margin-top: 24px;
+    padding: 0 16px;
   }
 
   .testimonial-card {
-    padding: 16px;
+    padding: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .testimonial-header {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .testimonial-name {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .testimonial-role {
+    font-size: 11px;
+  }
+
+  .testimonial-text {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .testimonial-stars {
+    font-size: 12px;
   }
 }
