@@ -1,6 +1,7 @@
 import React from "react";
 import "./Category.css";
 import categories from "../../data/categories";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
@@ -10,15 +11,15 @@ const Category = () => {
       </div>
       <div className="grid-section">
         {categories.map((cat) => (
-          <div className="grid label" key={cat.id}>
-            <div className="lebel-icon">
+          <Link to={`/courses?category=${cat.name}`} className="grid label" key={cat.id}>
+            <div className="label-icon">
               <img src={`/heroIconImg/${cat.icon}`} alt={cat.name} />
             </div>
             <div className="label-para">
               <h4 className="label-para-one">{cat.name}</h4>
               <p>{cat.courseCount.toLocaleString()} Courses</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="text">

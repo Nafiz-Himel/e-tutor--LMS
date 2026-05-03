@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./Courses.css";
 import courses from "../data/courses";
 import categories from "../data/categories";
 import CourseCard from "../components/CourseCard/CourseCard";
 
 const Courses = () => {
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("relevance");
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get("category");
+    if (categoryFromUrl) {
+      setSelectedCategory(categoryFromUrl);
+    }
+  }, [searchParams]);
 
   const filteredCourses = courses
     .filter((c) => selectedCategory === "All" || c.category === selectedCategory)
@@ -22,7 +31,7 @@ const Courses = () => {
   return (
     <div className="courses-page">
       <div className="courses-header">
-        <h1>All Courses</h1>
+        <h1>{selectedCategory === "All" ? "All Courses" : selectedCategory}</h1>
         <p>Explore our collection of expert-led courses</p>
       </div>
 

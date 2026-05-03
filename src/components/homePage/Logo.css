@@ -63,8 +63,8 @@
   content: "";
   position: absolute;
   top: -8px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
+  left: 24px;
+  transform: rotate(45deg);
   width: 14px;
   height: 14px;
   background: white;
