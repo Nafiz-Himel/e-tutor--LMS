@@ -39,10 +39,31 @@
     justify-content: center;
     align-items: center;
     margin-right: 25px;
-    gap: 25px;
+    gap: 8px;
     color: #E9EAF0;
     list-style: none;
     text-transform: uppercase;
+}
+
+.lang-switch{
+    padding: 4px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    color: #E9EAF0;
+    font-weight: 500;
+}
+
+.lang-switch:hover{
+    color: #ff6636;
+    background: rgba(255, 102, 54, 0.1);
+}
+
+.lang-switch.active{
+    background: #ff6636;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .nav-right-list a{

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useCart } from "../hooks/useCart";
+import { useLanguage } from "../hooks/useLanguage";
 import CourseCard from "../components/CourseCard/CourseCard";
 import courses from "../data/courses";
 import "./Dashboard.css";
@@ -9,6 +10,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const { user, logout } = useAuth();
   const { cartItems, wishlist, removeFromCart, toggleWishlist } = useCart();
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("courses");
   const navigate = useNavigate();
 
@@ -34,10 +36,10 @@ const Dashboard = () => {
 
       <div className="dashboard-tabs">
         <button className={activeTab === "courses" ? "active" : ""} onClick={() => setActiveTab("courses")}>
-          My Courses ({cartItems.length})
+          {t.dashboard.myCourses} ({cartItems.length})
         </button>
         <button className={activeTab === "wishlist" ? "active" : ""} onClick={() => setActiveTab("wishlist")}>
-          Wishlist ({wishlist.length})
+          {t.dashboard.wishlist} ({wishlist.length})
         </button>
         <button className={activeTab === "profile" ? "active" : ""} onClick={() => setActiveTab("profile")}>
           Profile
@@ -47,20 +49,20 @@ const Dashboard = () => {
       <div className="dashboard-content">
         {activeTab === "courses" && (
           <div className="tab-content">
-            <h2>My Enrolled Courses</h2>
+            <h2>{t.dashboard.myCourses}</h2>
             {cartItems.length > 0 ? (
               <div className="courses-grid">
                 {cartItems.map((course) => (
                   <div key={course.id} className="enrolled-course">
                     <CourseCard course={course} showWishlistButton={false} />
-                    <button className="remove-btn" onClick={() => removeFromCart(course.id)}>Remove</button>
+                    <button className="remove-btn" onClick={() => removeFromCart(course.id)}>{t.dashboard.removeFromCart}</button>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="empty-state">
-                <p>You haven't enrolled in any courses yet.</p>
-                <Link to="/courses" className="browse-link">Browse Courses</Link>
+                <p>{t.dashboard.emptyCourses}</p>
+                <Link to="/courses" className="browse-link">{t.dashboard.browseCourses}</Link>
               </div>
             )}
           </div>
@@ -68,17 +70,17 @@ const Dashboard = () => {
 
         {activeTab === "wishlist" && (
           <div className="tab-content">
-            <h2>My Wishlist</h2>
+            <h2>{t.dashboard.wishlist}</h2>
             {wishlistedCourses.length > 0 ? (
               <div className="courses-grid">
                 {wishlistedCourses.map((course) => (
-                  <CourseCard key={course.id} course={course} isWishlisted={true} onToggleWishlist={toggleWishlist} />
+                  <CourseCard key={course.id} course={course} />
                 ))}
               </div>
             ) : (
               <div className="empty-state">
-                <p>Your wishlist is empty.</p>
-                <Link to="/courses" className="browse-link">Browse Courses</Link>
+                <p>{t.dashboard.emptyWishlist}</p>
+                <Link to="/courses" className="browse-link">{t.dashboard.browseCourses}</Link>
               </div>
             )}
           </div>

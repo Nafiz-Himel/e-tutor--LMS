@@ -15,6 +15,7 @@ import courses from "../../data/courses";
 
 const Logo = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { user, logout } = useAuth();
   const { wishlist, cartItems } = useCart();
   const navigate = useNavigate();
@@ -24,6 +25,19 @@ const Logo = () => {
       logout();
     } else {
       navigate("/login");
+    }
+  };
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/courses?search=${encodeURIComponent(searchTerm.trim())}`);
+      setSearchTerm("");
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
     }
   };
 
@@ -70,10 +84,10 @@ const Logo = () => {
       </div>
 
       <div className="search-box">
-        <span className="search-icon">
+        <span className="search-icon" onClick={handleSearch}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </span>
-        <input type="text" placeholder="What do you want learn..." />
+        <input type="text" placeholder="What do you want learn..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={handleKeyDown} />
       </div>
 
       <div className="icons">

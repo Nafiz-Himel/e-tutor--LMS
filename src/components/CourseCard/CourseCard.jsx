@@ -1,10 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../hooks/useLanguage";
+import { useCart } from "../../hooks/useCart";
 import "./CourseCard.css";
 
-const CourseCard = ({ course, showWishlistButton = true, isWishlisted = false, onToggleWishlist }) => {
+const CourseCard = ({ course, showWishlistButton = true }) => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
+  const { wishlist, toggleWishlist } = useCart();
+  const isInWishlist = wishlist.includes(course.id);
 
   const handleClick = () => {
     navigate(`/courses/${course.id}`);
@@ -16,10 +21,10 @@ const CourseCard = ({ course, showWishlistButton = true, isWishlisted = false, o
         <img src={course.thumbnail} alt={course.title} />
         {showWishlistButton && (
           <button
-            className={`wishlist-btn ${isWishlisted ? "active" : ""}`}
+            className={`wishlist-btn ${isInWishlist ? "active" : ""}`}
             onClick={(e) => {
               e.stopPropagation();
-              onToggleWishlist && onToggleWishlist(course.id);
+              toggleWishlist(course.id);
             }}
           >
             <FontAwesomeIcon icon={faHeart} />
@@ -33,7 +38,7 @@ const CourseCard = ({ course, showWishlistButton = true, isWishlisted = false, o
         <div className="course-rating">
           <FontAwesomeIcon icon={faStar} className="star-icon" />
           <span>{course.rating}</span>
-          <span className="course-students">({course.students.toLocaleString()} students)</span>
+          <span className="course-students">({course.students.toLocaleString()} {t.courseDetail.students})</span>
         </div>
         <div className="course-price">${course.price}</div>
       </div>

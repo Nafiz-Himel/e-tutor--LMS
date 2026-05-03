@@ -1,17 +1,31 @@
 import "./About.css";
+import { useLanguage } from "../hooks/useLanguage";
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="about-page">
       <div className="about-hero">
-        <h1>About E-Tutor</h1>
-        <p>Empowering learners worldwide with expert-led online education</p>
+        <h1>{t.about.heading}</h1>
+        <p>{t.about.subheading}</p>
       </div>
 
       <div className="about-content">
+        <section className="about-text">
+          <p>{t.about.para1}</p>
+          <p>{t.about.para2}</p>
+        </section>
+
         <section className="mission-section">
-          <h2>Our Mission</h2>
-          <p>At E-Tutor, our mission is to make high-quality education accessible to everyone, anywhere, anytime. We connect expert instructors with eager learners to foster growth, creativity, and professional development.</p>
+          <div className="mission-card">
+            <h2>{t.about.ourMission}</h2>
+            <p>{t.about.missionText}</p>
+          </div>
+          <div className="mission-card">
+            <h2>{t.about.ourVision}</h2>
+            <p>{t.about.visionText}</p>
+          </div>
         </section>
 
         <section className="stats-section">
@@ -31,11 +45,6 @@ const About = () => {
             <h3>95%</h3>
             <p>Satisfaction Rate</p>
           </div>
-        </section>
-
-        <section className="team-section">
-          <h2>Our Team</h2>
-          <p>We're a dedicated group of educators, technologists, and lifelong learners committed to transforming online education.</p>
         </section>
       </div>
     </div>

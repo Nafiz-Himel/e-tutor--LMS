@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { useLanguage } from "../../hooks/useLanguage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./SignupModal.css";
@@ -12,6 +13,7 @@ const SignupModal = ({ isOpen, onClose }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const { signup } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,11 +37,11 @@ const SignupModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !email || !password || !confirmPassword) {
-      setError("Please fill in all fields");
+      setError(t.signup.errorAllFields);
       return;
     }
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError(t.signup.errorPasswords);
       return;
     }
     signup(name, email, password);
@@ -58,33 +60,33 @@ const SignupModal = ({ isOpen, onClose }) => {
 
         <div className="modal-header">
           <span className="modal-logo">🎓</span>
-          <h2>E-tutor</h2>
-          <p>Create your account and start learning today.</p>
+          <h2>{t.signup.heading}</h2>
+          <p>{t.signup.subheading}</p>
         </div>
 
         <form className="modal-form" onSubmit={handleSubmit}>
           {error && <div className="modal-error">{error}</div>}
           <div className="form-group">
-            <label>Full Name</label>
-            <input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} required />
+            <label>{t.signup.fullName}</label>
+            <input type="text" placeholder={t.signup.namePlaceholder} value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
           <div className="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <label>{t.signup.email}</label>
+            <input type="email" placeholder={t.signup.emailPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div className="form-group">
-            <label>Password</label>
-            <input type="password" placeholder="Create a password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <label>{t.signup.password}</label>
+            <input type="password" placeholder={t.signup.passwordPlaceholder} value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <div className="form-group">
-            <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm your password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+            <label>{t.signup.confirmPassword}</label>
+            <input type="password" placeholder={t.signup.confirmPasswordPlaceholder} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
           </div>
-          <button type="submit" className="modal-submit">Create Account</button>
+          <button type="submit" className="modal-submit">{t.signup.btnCreate}</button>
         </form>
 
         <p className="modal-switch">
-          Already have an account? <a href="/login" onClick={onClose}>Sign in here</a>
+          {t.signup.haveAccount} <a href="/login" onClick={onClose}>{t.signup.signin}</a>
         </p>
       </div>
     </div>

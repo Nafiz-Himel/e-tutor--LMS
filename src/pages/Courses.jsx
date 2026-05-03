@@ -4,17 +4,23 @@ import "./Courses.css";
 import courses from "../data/courses";
 import categories from "../data/categories";
 import CourseCard from "../components/CourseCard/CourseCard";
+import { useLanguage } from "../hooks/useLanguage";
 
 const Courses = () => {
   const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("relevance");
   const [searchTerm, setSearchTerm] = useState("");
+  const { t } = useLanguage();
 
   useEffect(() => {
     const categoryFromUrl = searchParams.get("category");
     if (categoryFromUrl) {
       setSelectedCategory(categoryFromUrl);
+    }
+    const searchFromUrl = searchParams.get("search");
+    if (searchFromUrl) {
+      setSearchTerm(searchFromUrl);
     }
   }, [searchParams]);
 
@@ -31,31 +37,31 @@ const Courses = () => {
   return (
     <div className="courses-page">
       <div className="courses-header">
-        <h1>{selectedCategory === "All" ? "All Courses" : selectedCategory}</h1>
-        <p>Explore our collection of expert-led courses</p>
+        <h1>{selectedCategory === "All" ? t.coursesPage.heading : selectedCategory}</h1>
+        <p>{t.coursesPage.subheading}</p>
       </div>
 
       <div className="courses-controls">
         <input
           type="text"
-          placeholder="Search courses..."
+          placeholder={t.coursesPage.searchPlaceholder}
           className="search-input"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
         <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className="filter-select">
-          <option value="All">All Categories</option>
+          <option value="All">{t.coursesPage.allCategories}</option>
           {categories.map((cat) => (
             <option key={cat.id} value={cat.name}>{cat.name}</option>
           ))}
         </select>
 
         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="filter-select">
-          <option value="relevance">Relevance</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="rating">Highest Rated</option>
+          <option value="relevance">{t.coursesPage.relevance}</option>
+          <option value="price-low">{t.coursesPage.priceLow}</option>
+          <option value="price-high">{t.coursesPage.priceHigh}</option>
+          <option value="rating">{t.coursesPage.highestRated}</option>
         </select>
       </div>
 
@@ -65,7 +71,7 @@ const Courses = () => {
             <CourseCard key={course.id} course={course} />
           ))
         ) : (
-          <p className="no-results">No courses found. Try adjusting your filters.</p>
+          <p className="no-results">{t.coursesPage.noResults}</p>
         )}
       </div>
     </div>

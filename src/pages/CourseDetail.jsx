@@ -5,15 +5,17 @@ import "./CourseDetail.css";
 import courses from "../data/courses";
 import instructors from "../data/instructors";
 import { useCart } from "../hooks/useCart";
+import { useLanguage } from "../hooks/useLanguage";
 
 const CourseDetail = () => {
   const { id } = useParams();
   const course = courses.find((c) => c.id === parseInt(id));
   const instructor = instructors.find((i) => i.name === course?.instructor);
   const { wishlist, toggleWishlist, cartItems, addToCart } = useCart();
+  const { t } = useLanguage();
 
   if (!course) {
-    return <div className="course-not-found">Course not found</div>;
+    return <div className="course-not-found">{t.courseDetail.notFound}</div>;
   }
 
   const isInWishlist = wishlist.includes(course.id);
@@ -27,16 +29,16 @@ const CourseDetail = () => {
           <h1>{course.title}</h1>
           <p className="course-description">{course.description}</p>
           <div className="course-meta">
-            <span><FontAwesomeIcon icon={faStar} className="star" /> {course.rating} ({course.students.toLocaleString()} students)</span>
-            <span>Instructor: {course.instructor}</span>
+            <span><FontAwesomeIcon icon={faStar} className="star" /> {course.rating} ({course.students.toLocaleString()} {t.courseDetail.students})</span>
+            <span>{t.courseDetail.instructor}: {course.instructor}</span>
           </div>
           <div className="course-price-large">${course.price}</div>
           <div className="course-actions">
             <button className={`btn-enroll ${isInCart ? "active" : ""}`} onClick={() => !isInCart && addToCart(course)}>
-              <FontAwesomeIcon icon={faCartShopping} /> {isInCart ? "In Cart" : "Enroll Now"}
+              <FontAwesomeIcon icon={faCartShopping} /> {isInCart ? t.courseDetail.inCart : t.courseDetail.enrollNow}
             </button>
             <button className={`btn-wishlist ${isInWishlist ? "active" : ""}`} onClick={() => toggleWishlist(course.id)}>
-              <FontAwesomeIcon icon={faHeart} /> {isInWishlist ? "In Wishlist" : "Add to Wishlist"}
+              <FontAwesomeIcon icon={faHeart} /> {isInWishlist ? t.courseDetail.inWishlist : t.courseDetail.addToWishlist}
             </button>
           </div>
         </div>
@@ -47,7 +49,7 @@ const CourseDetail = () => {
 
       <div className="course-body">
         <div className="curriculum-section">
-          <h2>Curriculum</h2>
+          <h2>{t.courseDetail.curriculum}</h2>
           <div className="curriculum-list">
             {course.curriculum.map((item, index) => (
               <div className="curriculum-item" key={index}>
@@ -60,7 +62,7 @@ const CourseDetail = () => {
 
         {instructor && (
           <div className="instructor-section">
-            <h2>Your Instructor</h2>
+            <h2>{t.courseDetail.yourInstructor}</h2>
             <div className="instructor-card-detail">
               <img src={instructor.avatar} alt={instructor.name} />
               <div>

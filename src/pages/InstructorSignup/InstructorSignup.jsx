@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { useLanguage } from "../../hooks/useLanguage";
 import "./InstructorSignup.css";
 
 const InstructorSignup = () => {
@@ -16,6 +17,7 @@ const InstructorSignup = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const { signup } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -27,15 +29,15 @@ const InstructorSignup = () => {
     const { name, email, password, confirmPassword, title, expertise, bio } = formData;
 
     if (!name || !email || !password || !confirmPassword || !title || !expertise || !bio) {
-      setError("Please fill in all fields");
+      setError(t.instructorSignup.errorAllFields);
       return;
     }
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError(t.instructorSignup.errorPasswords);
       return;
     }
     if (bio.length < 20) {
-      setError("Bio must be at least 20 characters");
+      setError(t.instructorSignup.errorBio);
       return;
     }
 
@@ -51,8 +53,8 @@ const InstructorSignup = () => {
       <div className="instructor-auth-page">
         <div className="auth-container instructor-success">
           <span className="auth-logo">🎓</span>
-          <h1>Welcome, Instructor!</h1>
-          <p>Your instructor account has been created successfully. Redirecting to your dashboard...</p>
+          <h1>{t.instructorSignup.successTitle}</h1>
+          <p>{t.instructorSignup.successText}</p>
         </div>
       </div>
     );
@@ -63,49 +65,49 @@ const InstructorSignup = () => {
       <div className="auth-container">
         <div className="auth-header">
           <span className="auth-logo">🎓</span>
-          <h1>Become an Instructor</h1>
-          <p>Share your knowledge and inspire learners worldwide.</p>
+          <h1>{t.instructorSignup.heading}</h1>
+          <p>{t.instructorSignup.subheading}</p>
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
           {error && <div className="auth-error">{error}</div>}
           <div className="form-row">
             <div className="form-group">
-              <label>Full Name</label>
-              <input type="text" name="name" placeholder="Enter your name" value={formData.name} onChange={handleChange} required />
+              <label>{t.instructorSignup.fullName}</label>
+              <input type="text" name="name" placeholder={t.instructorSignup.namePlaceholder} value={formData.name} onChange={handleChange} required />
             </div>
             <div className="form-group">
-              <label>Email</label>
-              <input type="email" name="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} required />
+              <label>{t.instructorSignup.email}</label>
+              <input type="email" name="email" placeholder={t.instructorSignup.emailPlaceholder} value={formData.email} onChange={handleChange} required />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group">
-              <label>Password</label>
-              <input type="password" name="password" placeholder="Create a password" value={formData.password} onChange={handleChange} required />
+              <label>{t.instructorSignup.password}</label>
+              <input type="password" name="password" placeholder={t.instructorSignup.passwordPlaceholder} value={formData.password} onChange={handleChange} required />
             </div>
             <div className="form-group">
-              <label>Confirm Password</label>
-              <input type="password" name="confirmPassword" placeholder="Confirm your password" value={formData.confirmPassword} onChange={handleChange} required />
+              <label>{t.instructorSignup.confirmPassword}</label>
+              <input type="password" name="confirmPassword" placeholder={t.instructorSignup.confirmPasswordPlaceholder} value={formData.confirmPassword} onChange={handleChange} required />
             </div>
           </div>
           <div className="form-group">
-            <label>Title / Expertise</label>
-            <input type="text" name="title" placeholder="e.g. Senior Full-Stack Developer" value={formData.title} onChange={handleChange} required />
+            <label>{t.instructorSignup.title}</label>
+            <input type="text" name="title" placeholder={t.instructorSignup.titlePlaceholder} value={formData.title} onChange={handleChange} required />
           </div>
           <div className="form-group">
-            <label>Primary Expertise Area</label>
-            <input type="text" name="expertise" placeholder="e.g. Web Development, Data Science" value={formData.expertise} onChange={handleChange} required />
+            <label>{t.instructorSignup.expertise}</label>
+            <input type="text" name="expertise" placeholder={t.instructorSignup.expertisePlaceholder} value={formData.expertise} onChange={handleChange} required />
           </div>
           <div className="form-group">
-            <label>Bio</label>
-            <textarea name="bio" placeholder="Tell students about your experience and background..." value={formData.bio} onChange={handleChange} required rows="4" />
+            <label>{t.instructorSignup.bio}</label>
+            <textarea name="bio" placeholder={t.instructorSignup.bioPlaceholder} value={formData.bio} onChange={handleChange} required rows="4" />
           </div>
-          <button type="submit" className="auth-btn instructor-btn">Create Instructor Account</button>
+          <button type="submit" className="auth-btn instructor-btn">{t.instructorSignup.btnCreate}</button>
         </form>
 
         <p className="auth-switch">
-          Not looking to teach? <a href="/signup">Sign up as a student</a>
+          {t.instructorSignup.notTeaching} <a href="/signup">{t.instructorSignup.signupStudent}</a>
         </p>
       </div>
     </div>

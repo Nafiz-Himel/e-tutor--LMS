@@ -1,13 +1,16 @@
 import React from "react";
 import "./Instructors.css";
 import instructors from "../../data/instructors";
+import { useLanguage } from "../../hooks/useLanguage";
 
 const Instructors = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="instructors-section">
       <div className="section-header">
-        <h2>Top Instructors</h2>
-        <p>Learn from industry experts</p>
+        <h2>{t.instructors.heading}</h2>
+        <p>{t.instructors.subheading}</p>
       </div>
       <div className="instructors-grid">
         {instructors.slice(0, 6).map((inst) => (

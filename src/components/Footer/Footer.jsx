@@ -1,6 +1,9 @@
 import './Footer.css'
+import { useLanguage } from '../../hooks/useLanguage'
 
 const Footer = () => {
+  const { t } = useLanguage()
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -13,12 +16,12 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h4>Quick Links</h4>
+          <h4>{t.footer.quickLinks}</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/courses">Courses</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/">{t.nav.home}</a></li>
+            <li><a href="/courses">{t.nav.courses}</a></li>
+            <li><a href="/about">{t.nav.about}</a></li>
+            <li><a href="/contact">{t.nav.contact}</a></li>
           </ul>
         </div>
 
@@ -33,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h4>Contact Info</h4>
+          <h4>{t.footer.contact}</h4>
           <ul className="contact-info">
             <li>📧 info@e-tutor.com</li>
             <li>📞 +1 (555) 123-4567</li>
@@ -43,7 +46,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} E-tutor. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} E-tutor. {t.footer.allRightsReserved}</p>
       </div>
     </footer>
   )

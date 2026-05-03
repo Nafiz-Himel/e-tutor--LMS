@@ -149,6 +149,12 @@
 
 .search-icon {
   font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.search-icon:hover {
+  color: #ff6636;
 }
 
 /* Icons */
