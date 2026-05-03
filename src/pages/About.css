@@ -1,0 +1,74 @@
+.about-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 25px;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #ff6636, #ff8c5a);
+  border-radius: 12px;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.about-hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.mission-section h2,
+.team-section h2 {
+  font-size: 32px;
+  color: #1D2026;
+  margin-bottom: 16px;
+}
+
+.mission-section p,
+.team-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 32px;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.stat-card h3 {
+  font-size: 36px;
+  color: #ff6636;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

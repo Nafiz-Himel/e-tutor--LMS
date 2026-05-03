@@ -1,0 +1,10 @@
+.popular-courses-section {
+  width: 75%;
+  margin: 60px auto;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}

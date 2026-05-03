@@ -1,0 +1,72 @@
+.instructors-section {
+  width: 75%;
+  margin: 60px auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  color: #1D2026;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.instructor-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.instructor-card:hover {
+  transform: translateY(-4px);
+}
+
+.instructor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.instructor-name {
+  font-size: 18px;
+  color: #1D2026;
+  margin-bottom: 4px;
+}
+
+.instructor-title {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.instructor-stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.instructor-stats span:first-child {
+  color: #ff6636;
+  font-weight: 600;
+}
